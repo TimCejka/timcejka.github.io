@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <style>
-      button.accordion2, button.accordion {
+      button.accordion2, button.accordion, button.accordion-all {
         font:14px/1.5 "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
         cursor: pointer;
         padding: 0px;
@@ -43,10 +43,10 @@
         transition: 0.4s;
         background-color: #f8f8f8;
       }
-      button.accordion.active, button.accordion:hover {
+      button.accordion.active, button.accordion:hover, button.accordion-all:hover {
         background-color: #f8f8f8;
       }
-      button.accordion:after {
+      button.accordion:after, button.accordion-all:after {
         content: '[+]';
         font-size: 90%;
         color:#777;
@@ -62,8 +62,14 @@
         margin-left: 1px;
         margin-right: 0.35em;
       }
-      button.accordion.active:after {
+      button.accordion.active:after, button.accordion-all.active:after {
         content: "[\2212]";
+      }
+      button.accordion-all {
+        float: right;
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: 6px;
       }
       div.panel {
         /* abstract box, styled after tomastapak.github.io */
@@ -104,7 +110,7 @@
         <br>
         <br>
 
-        <h3 id="working-papers">Working Papers</h3>
+        <h3 id="working-papers">Working Papers <button type="button" class="accordion-all" id="toggle-all" aria-expanded="false">All Abstracts</button></h3>
 
         <p class="paper" style="margin:0;"><a class="paper-title" href="http://timcejka.github.io/papers/Cejka_ONeil_2026_Premature_Deindustrialization.pdf">Premature Deindustrialization and the Agricultural Productivity Gap</a><br>
         <span class="paper-authors">(with <a href="https://economics.stanford.edu/people/flint-oneil">Flint O'Neil</a>)</span><br>
@@ -174,12 +180,30 @@
       if (location.hash === "#working-papers") flashPapers();
       var acc = document.getElementsByClassName("accordion");
       var i;
+      var toggleAll = document.getElementById("toggle-all");
+      function syncToggleAll() {
+        var allOpen = acc.length > 0;
+        for (var j = 0; j < acc.length; j++) {
+          if (!acc[j].classList.contains("active")) allOpen = false;
+        }
+        toggleAll.classList.toggle("active", allOpen);
+        toggleAll.setAttribute("aria-expanded", allOpen ? "true" : "false");
+      }
       for (i = 0; i < acc.length; i++) {
         acc[i].onclick = function(){
           this.classList.toggle("active");
           this.parentNode.nextElementSibling.classList.toggle("show");
+          syncToggleAll();
         }
       }
+      toggleAll.addEventListener("click", function () {
+        var open = !toggleAll.classList.contains("active");
+        for (var j = 0; j < acc.length; j++) {
+          acc[j].classList.toggle("active", open);
+          acc[j].parentNode.nextElementSibling.classList.toggle("show", open);
+        }
+        syncToggleAll();
+      });
     </script>
       <script src="javascripts/theme.js"></script>
   </body>

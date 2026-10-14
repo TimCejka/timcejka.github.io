@@ -1,6 +1,8 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap);
 
-/* TeX Gyre Pagella: a free Palatino clone and the one font of this site,
-   served from here so every device (including Android, which has no Palatino) gets it */
+
+/* TeX Gyre Pagella: a free Palatino clone used for the papers, served from
+   here so every device (including Android, which has no Palatino) gets it */
 @font-face {
   font-family:"TeX Gyre Pagella";
   src:local("TeX Gyre Pagella"), url("../fonts/texgyrepagella-regular.otf") format("opentype");
@@ -19,9 +21,9 @@
 
 body {
   padding:50px;
-  font:14px/1.5 "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
+  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#222;
-  font-weight:400;
+  font-weight:300;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -348,10 +350,6 @@ section li::before {
   25%, 70% { opacity:1; }
 }
 
-/* name at the top of the sidebar */
-header h1, header h1 a {
-  font-weight:700;
-}
 
 /* paper titles: larger, in Pagella (Palatino style, as on tomastapak.github.io) */
 .paper-title {
@@ -383,7 +381,7 @@ header h1, header h1 a {
   top:16px;
   right:16px;
   z-index:10;
-  font:13px/1 "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
+  font:13px/1 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding:6px 12px;
   border:1px solid #ccc;
   border-radius:16px;
@@ -426,7 +424,8 @@ html[data-theme="dark"] div.panel {
   color:#d6d6d6;
 }
 
-html[data-theme="dark"] button.accordion {
+html[data-theme="dark"] button.accordion,
+html[data-theme="dark"] button.accordion-all {
   background-color:transparent;
   color:#d6d6d6;
 }
@@ -451,4 +450,32 @@ html[data-theme="dark"] .theme-toggle {
   background:#23262c;
   border-color:#44474e;
   color:#ececec;
+}
+
+/* light text outside the papers: name and sidebar buttons */
+header h1, header h1 a {
+  font-size:34px;
+  font-weight:300;
+}
+
+header h3 a {
+  font-weight:300;
+}
+
+/* section headings: Working Papers, Conferences and seminars */
+section > h3 {
+  font-size:22px;
+  font-weight:300;
+}
+
+/* Conferences page labels: Upcoming, Past conferences and seminars */
+section > b {
+  font-size:17px;
+  font-weight:400;
+}
+
+/* the papers keep Pagella */
+.paper {
+  font-family:"TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
+  font-weight:400;
 }
