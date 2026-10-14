@@ -452,10 +452,10 @@ html[data-theme="dark"] .theme-toggle {
   color:#ececec;
 }
 
-/* light text outside the papers: name and sidebar buttons */
+/* outside the papers: bold name (as on tomastapak.github.io), light sidebar buttons */
 header h1, header h1 a {
   font-size:34px;
-  font-weight:300;
+  font-weight:700;
 }
 
 header h3 a {
@@ -465,13 +465,13 @@ header h3 a {
 /* section headings: Working Papers, Conferences and seminars */
 section > h3 {
   font-size:22px;
-  font-weight:300;
+  font-weight:700;
 }
 
 /* Conferences page labels: Upcoming, Past conferences and seminars */
 section > b {
   font-size:17px;
-  font-weight:400;
+  font-weight:700;
 }
 
 /* the papers keep Pagella */
