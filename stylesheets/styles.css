@@ -1,7 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
-/* TeX Gyre Pagella: a free Palatino clone, served from this site so every
-   device (including Android, which has no Palatino) gets the same font */
+/* TeX Gyre Pagella: a free Palatino clone and the one font of this site,
+   served from here so every device (including Android, which has no Palatino) gets it */
 @font-face {
   font-family:"TeX Gyre Pagella";
   src:local("TeX Gyre Pagella"), url("../fonts/texgyrepagella-regular.otf") format("opentype");
@@ -20,9 +19,9 @@
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:14px/1.5 "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
   color:#222;
-  font-weight:300;
+  font-weight:400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -384,7 +383,7 @@ header h1, header h1 a {
   top:16px;
   right:16px;
   z-index:10;
-  font:13px/1 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:13px/1 "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
   padding:6px 12px;
   border:1px solid #ccc;
   border-radius:16px;
