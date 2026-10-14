@@ -345,3 +345,17 @@ header h1, header h1 a {
 .paper-authors a:hover {
   text-decoration:underline;
 }
+
+/* desktop: the pinned left panel scrolls on its own when the window is short */
+@media screen and (min-width: 961px) {
+  header {
+    /* the panel starts 58px down the page; with the 40px bottom space below, it must end at the window edge */
+    max-height:calc(100vh - 58px - 40px);
+    overflow-y:auto;
+    /* space under the last button so it can scroll clear of the window edge */
+    padding-bottom:40px;
+    /* room on the left so the hover bar is not clipped */
+    padding-left:16px;
+    margin-left:-16px;
+  }
+}
