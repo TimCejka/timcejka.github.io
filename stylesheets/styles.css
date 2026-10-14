@@ -336,6 +336,11 @@ header h1, header h1 a {
   font-weight:700;
 }
 
+/* paper titles: larger, in Palatino (as on tomastapak.github.io) */
+.paper-title {
+  font:bold 17px/1.4 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
 /* coauthor names: linked, but styled like the surrounding text */
 .paper-authors a {
   color:inherit;
@@ -399,8 +404,9 @@ html[data-theme="dark"] .paper-authors a {
 }
 
 html[data-theme="dark"] div.panel {
-  background-color:#23262c !important;
-  color:#d6d6d6 !important;
+  background-color:#1e2126;
+  border-left-color:#5a5f69;
+  color:#d6d6d6;
 }
 
 html[data-theme="dark"] button.accordion {
