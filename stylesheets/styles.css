@@ -525,3 +525,13 @@ html[data-theme="dark"] section a:visited {
 section .paper-authors a:visited {
   color:inherit;
 }
+
+/* underline on hover, as on dannyyagan.com: solid for links in the page,
+   dashed for the sidebar menu */
+section a:hover {
+  text-decoration:underline;
+}
+
+header h3 a:hover {
+  border-bottom:1px dashed;
+}
