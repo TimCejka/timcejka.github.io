@@ -16,7 +16,7 @@
       try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
     </script>
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <title>Tim Cejka by timcejka</title>
+  <title>Tim Cejka | UC Berkeley</title>
 
   <link rel="stylesheet" href="stylesheets/styles.css">
   <link rel="stylesheet" href="stylesheets/github-light.css">
@@ -29,81 +29,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-<script type="text/javascript">
-<!-->
-var image1=new Image()
-image1.src="pictures/cep1.png"
 
-var image2=new Image()
-image2.src="pictures/cep2.png"
-
-var image3=new Image()
-image3.src="pictures/cep3.png"
-
-var image4=new Image()
-image4.src="pictures/cep4.png"
-
-var image5=new Image()
-image5.src="pictures/cep5.png"
-
-var image6=new Image()
-image6.src="pictures/cep6.png"
-
-var image7=new Image()
-image7.src="pictures/cep7.png"
-
-var image8=new Image()
-image8.src="pictures/cep8.png"
-
-var image9=new Image()
-image9.src="pictures/cep9.png"
-
-var image10=new Image()
-image10.src="pictures/cep10.png"
-
-var image11=new Image()
-image11.src="pictures/cep11.png"
-
-var image12=new Image()
-image12.src="pictures/cep12.png"
-
-var image13=new Image()
-image13.src="pictures/cep13.png"
-
-var image14=new Image()
-image14.src="pictures/cep14.png"
-
-var image15=new Image()
-image15.src="pictures/cep15.png"
-
-var image16=new Image()
-image16.src="pictures/cep16.png"
-
-var image17=new Image()
-image17.src="pictures/cep17.png"
-
-var image18=new Image()
-image18.src="pictures/cep18.png"
-
-var image19=new Image()
-image19.src="pictures/cep19.png"
-
-var image20=new Image()
-image20.src="pictures/cep20.png"
-
-var image21=new Image()
-image21.src="pictures/cep21.png"
-
-var image22=new Image()
-image22.src="pictures/cep22.png"
-
-var image23=new Image()
-image23.src="pictures/cep23.png"
-
-var image24=new Image()
-image24.src="pictures/cep24.png"
-
-</script>
 </head>
 
 <body>
@@ -122,21 +48,10 @@ image24.src="pictures/cep24.png"
     <section>
       <h3><a id="updates" class="anchor" href="#updates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conferences and seminars</h3>
 
-      <img src="pictures/cep1.png" name="slide" width="750" height="400">
-      <script type="text/javascript"
-      <!-->
-      var step = 1
-      function slideit(){
-        document.images.slide.src=eval("image"+step+".src")
-        if(step<9)
-        step++
-        else
-        step=1
-        setTimeout("slideit()", 3000)
-      }
-      slideit()
-//-->
-  </script>
+      <div class="slideshow" aria-label="Photos from conferences and seminars">
+        <img class="slide" src="pictures/slides/cep1.jpg" width="1200" height="800" alt="Conference photo" fetchpriority="high">
+        <img class="slide next" width="1200" height="800" alt="" aria-hidden="true">
+      </div>
   <br>
   
 <!--
@@ -312,6 +227,7 @@ image24.src="pictures/cep24.png"
   <script src="javascripts/scale.fix.js"></script>
 
     <script src="javascripts/theme.js"></script>
+    <script src="javascripts/slideshow.js"></script>
   </body>
 
 </html>
