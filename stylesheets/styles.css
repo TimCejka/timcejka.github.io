@@ -3,7 +3,7 @@
 body {
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#444;
+  color:#222;
   font-weight:300;
 }
 
@@ -25,11 +25,11 @@ h1 {
 }
 
 h2 {
-  color:#393939;
+  color:#222;
 }
 
 h3, h4, h5, h6 {
-  color:#494949;
+  color:#222;
 }
 
 a {
@@ -264,12 +264,12 @@ pre {
     background: #F1F1F1;
 }
 
-/* sidebar buttons: a bar appears on hover */
-header h3 a {
+/* sidebar buttons and name: a bar appears on hover */
+header h1 a, header h3 a {
   position:relative;
 }
 
-header h3 a::before {
+header h1 a::before, header h3 a::before {
   content:"";
   position:absolute;
   left:-14px;
@@ -281,8 +281,48 @@ header h3 a::before {
   transition:opacity .15s ease;
 }
 
-header h3 a:hover::before {
+header h1 a:hover::before, header h3 a:hover::before {
   opacity:1;
+}
+
+/* the same bar beside a paper or a conference while the mouse is over it */
+.paper, section li {
+  position:relative;
+}
+
+.paper::before, section li::before {
+  content:"";
+  position:absolute;
+  left:-14px;
+  top:2px;
+  bottom:2px;
+  width:3px;
+  background:#6e7a99;
+  opacity:0;
+  transition:opacity .15s ease;
+}
+
+section li::before {
+  left:-32px;
+}
+
+.paper:hover::before, section li:hover::before {
+  opacity:1;
+}
+
+/* clicking Research flashes the bar beside each paper */
+#working-papers:target ~ .paper::before {
+  animation:paper-flash 1.6s ease;
+}
+
+@keyframes paper-flash {
+  0%, 100% { opacity:0; }
+  25%, 70% { opacity:1; }
+}
+
+/* name at the top of the sidebar */
+header h1, header h1 a {
+  font-weight:700;
 }
 
 /* coauthor names: linked, but styled like the surrounding text */
