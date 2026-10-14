@@ -1,5 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
+/* TeX Gyre Pagella: a free Palatino clone, served from this site so every
+   device (including Android, which has no Palatino) gets the same font */
+@font-face {
+  font-family:"TeX Gyre Pagella";
+  src:local("TeX Gyre Pagella"), url("../fonts/texgyrepagella-regular.otf") format("opentype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family:"TeX Gyre Pagella";
+  src:local("TeX Gyre Pagella Bold"), url("../fonts/texgyrepagella-bold.otf") format("opentype");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
 body {
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -336,9 +354,9 @@ header h1, header h1 a {
   font-weight:700;
 }
 
-/* paper titles: larger, in Palatino (as on tomastapak.github.io) */
+/* paper titles: larger, in Pagella (Palatino style, as on tomastapak.github.io) */
 .paper-title {
-  font:bold 17px/1.4 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font:bold 17px/1.4 "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif;
 }
 
 /* coauthor names: linked, but styled like the surrounding text */
