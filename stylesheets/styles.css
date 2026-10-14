@@ -354,3 +354,78 @@ header h1, header h1 a {
     padding-bottom:80px;
   }
 }
+
+/* dark mode button, top-right corner */
+.theme-toggle {
+  position:fixed;
+  top:16px;
+  right:16px;
+  z-index:10;
+  font:13px/1 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding:6px 12px;
+  border:1px solid #ccc;
+  border-radius:16px;
+  background:#fff;
+  color:#222;
+  cursor:pointer;
+}
+
+.theme-toggle:hover {
+  border-color:#6e7a99;
+}
+
+/* dark mode */
+html[data-theme="dark"] {
+  color-scheme:dark;
+}
+
+html[data-theme="dark"] body {
+  background:#16181c;
+  color:#d6d6d6;
+}
+
+html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3,
+html[data-theme="dark"] h4, html[data-theme="dark"] h5, html[data-theme="dark"] h6,
+html[data-theme="dark"] strong {
+  color:#ececec;
+}
+
+html[data-theme="dark"] a {
+  color:#8cb8e8;
+}
+
+html[data-theme="dark"] .paper-authors a {
+  color:inherit;
+}
+
+html[data-theme="dark"] div.panel {
+  background-color:#23262c !important;
+  color:#d6d6d6 !important;
+}
+
+html[data-theme="dark"] button.accordion {
+  background-color:transparent;
+  color:#d6d6d6;
+}
+
+html[data-theme="dark"] header h1 a::before,
+html[data-theme="dark"] header h3 a::before,
+html[data-theme="dark"] .paper::before,
+html[data-theme="dark"] section li::before {
+  background:#9aa6c4;
+}
+
+html[data-theme="dark"] section {
+  border-color:#33363c;
+}
+
+html[data-theme="dark"] code, html[data-theme="dark"] pre {
+  background:#23262c;
+  color:#d6d6d6;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  background:#23262c;
+  border-color:#44474e;
+  color:#ececec;
+}

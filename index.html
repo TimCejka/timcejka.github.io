@@ -13,6 +13,10 @@
 
 
     <meta charset="utf-8"> 
+    <script>
+      // apply a saved dark-mode choice before the page draws, so it does not flash white
+      try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+    </script>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Tim Cejka by timcejka</title>
 
@@ -77,6 +81,8 @@
     </style>
     </head>
   <body>
+  <button id="theme-toggle" class="theme-toggle" type="button">&#9790; Dark</button>
+
   <div class="wrapper">
     <header>
       <h1><a href="https://timcejka.github.io/" style="color:inherit; text-decoration:none;">Tim Cejka</a></h1>
@@ -91,7 +97,7 @@
   </header>
       <section>
 
-      <img src="pictures/my_long_photo.jpg" name="slide" width="1920" >
+      <img id="banner" src="pictures/my_long_photo.jpg" name="slide" width="1920" alt="Photo banner" title="Click for another photo" role="button" tabindex="0" style="cursor:pointer;">
         <br>
         <br>
 
@@ -139,6 +145,20 @@
     </div>
     <script src="javascripts/scale.fix.js"></script>
     <script>
+      // clicking the banner switches between the two photos
+      var banner = document.getElementById("banner");
+      var bannerPhotos = ["pictures/my_long_photo.jpg", "pictures/my_long_photo_2.jpg"];
+      var bannerIndex = 0;
+      new Image().src = bannerPhotos[1];
+      function nextBanner() {
+        bannerIndex = (bannerIndex + 1) % bannerPhotos.length;
+        banner.src = bannerPhotos[bannerIndex];
+      }
+      banner.addEventListener("click", nextBanner);
+      banner.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); nextBanner(); }
+      });
+
       // flash the bar beside each paper on every click of Research,
       // and on arrival from the Conferences page's Research button
       function flashPapers() {
@@ -158,5 +178,6 @@
         }
       }
     </script>
+      <script src="javascripts/theme.js"></script>
   </body>
 </html>
