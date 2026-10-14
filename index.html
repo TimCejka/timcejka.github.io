@@ -92,7 +92,7 @@
 <p class="view"><img src="pictures/prof_photo_slack.png" width="100%" alt="Long Photo"></p>
 <p>I am a fourth-year Economics PhD candidate at UC Berkeley. I am most interested in public, labor, and development economics.</p>
 <p>Before joining UC Berkeley, I worked as a Research Professional at the University of Chicago Booth School of Business and earned an M.Sc. (with Distinction) in Econometrics and Mathematical Economics from the London School of Economics.</p>
-      <h3><p class="view"><a href="#working-papers">Research</a></p></h3>
+      <h3><p class="view"><a class="current" aria-current="page" href="#working-papers">Research</a></p></h3>
       <h3><p class="view"><a href="https://timcejka.github.io/papers/cv.pdf">CV</a></p></h3>
       <h3><p class="view"><a href="mailto:tim_cejka@berkeley.edu">Email me</a></p></h3>
       <h3><p class="view"><a href="https://timcejka.github.io/conferences.html">Conferences</a></p></h3>
@@ -120,13 +120,13 @@
 
         <p class="paper" style="margin:0;"><a style="margin:0; font-size:100%; font-weight:bold" href="http://timcejka.github.io/papers/Cejka_Waseem_2026_In-Utero_Exposure.pdf">Multigenerational Effects of Prenatal Exposure to Ramadan</a><br>
         <span class="paper-authors">(with <a href="https://www.mazharwaseem.com">Mazhar Waseem</a>)</span><br>
-        <span class="paper-date">Last updated: February 2026</span><br>
+        <span class="paper-date">Last updated: July 2026</span><br>
         <a href="http://timcejka.github.io/papers/Cejka_Waseem_2026_In-Utero_Exposure.pdf">Last draft</a>, 
         <a href="https://cepr.org/voxeu/columns/long-run-economic-impact-utero-shocks">VoxEU Column</a>,
         <a href="https://cepr.org/voxeu/vox-webcasts/utero-effects-ramadan-fasting-estimating-long-term-outcomes">Vox Webcast</a><br>
         <button class="accordion">Abstract</button></p>
         <div class="panel" style="background-color: #F1F1F1; color: #222; padding: 10px;">
-          Using administrative tax records, two large-scale nationally representative surveys, and a purpose-built household survey from Pakistan, we estimate the long-run effects of prenatal Ramadan fasting. Maternal fasting reduces birth weight, educational attainment, and adult earnings, with average ATT effects approximately 2.5 times larger than ITT estimates. We document three novel findings. First, exposure and fasting rates do not vary by socioeconomic status, yet impacts concentrate among poorer households, implying a poverty penalty in consequences of early-life shocks. Second, exposure transmits intergenera-tionally through both maternal and paternal lines. Third, effects vary by trimester in patterns consistent with developmental biology. Back-of-the-envelope calcula-tions suggest this single mechanism permanently lowers Pakistan's steady-state GDP by approximately 1.5% or by $5.6 billion annually.
+          Using administrative tax records, two nationally-representative surveys, and a purpose-built survey from Pakistan, we estimate the long-run effects of Ramadan fasting. Maternal fasting reduces birth weight, educational attainment, and adult earnings. We document three novel findings. First, while fasting rates do not vary by socioeconomic status, the impacts concentrate among poorer households, implying a poverty penalty in consequences of early-life shocks. Second, exposure transmits intergenerationally through both maternal and paternal lines. Third, effects vary by trimester in patterns consistent with developmental biology. Back-of-the-envelope calculations suggest this single mechanism permanently lowers Pakistan's steady-state GDP by 1.5% or by $5.6 billion annually.
 
         </div>
         <br>
@@ -148,6 +148,16 @@
     </div>
     <script src="javascripts/scale.fix.js"></script>
     <script>
+      // flash the bar beside each paper on every click of Research,
+      // and on arrival from the Conferences page's Research button
+      function flashPapers() {
+        var papers = document.getElementById("working-papers").parentNode;
+        var next = papers.classList.contains("flash-a") ? "flash-b" : "flash-a";
+        papers.classList.remove("flash-a", "flash-b");
+        papers.classList.add(next);
+      }
+      document.querySelector('a[href="#working-papers"]').addEventListener("click", flashPapers);
+      if (location.hash === "#working-papers") flashPapers();
       var acc = document.getElementsByClassName("accordion");
       var i;
       for (i = 0; i < acc.length; i++) {

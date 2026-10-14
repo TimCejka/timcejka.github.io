@@ -281,7 +281,8 @@ header h1 a::before, header h3 a::before {
   transition:opacity .15s ease;
 }
 
-header h1 a:hover::before, header h3 a:hover::before {
+header h1 a:hover::before, header h3 a:hover::before,
+header h3 a.current::before {
   opacity:1;
 }
 
@@ -311,11 +312,21 @@ section li::before {
 }
 
 /* clicking Research flashes the bar beside each paper */
-#working-papers:target ~ .paper::before {
-  animation:paper-flash 1.6s ease;
+/* two identical animations, alternated so every click starts a fresh one */
+.flash-a .paper::before {
+  animation:paper-flash-a 1.6s ease;
 }
 
-@keyframes paper-flash {
+.flash-b .paper::before {
+  animation:paper-flash-b 1.6s ease;
+}
+
+@keyframes paper-flash-a {
+  0%, 100% { opacity:0; }
+  25%, 70% { opacity:1; }
+}
+
+@keyframes paper-flash-b {
   0%, 100% { opacity:0; }
   25%, 70% { opacity:1; }
 }
