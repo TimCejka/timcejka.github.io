@@ -253,6 +253,13 @@ footer {
   pre, code {
     word-wrap:normal;
   }
+
+  /* on phones keep the profile photo a modest size instead of full width */
+  header p.view img {
+    width:auto;
+    max-width:240px;
+    height:auto;
+  }
 }
 
 @media print, screen and (max-width: 480px) {
